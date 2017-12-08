@@ -43,9 +43,10 @@
 
 ## 環境構築
 ### .NET Coreを入れてみる
-https://github.com/dotnet/core/blob/master/release-notes/download-archive.md
-ここから最新のバージョンを選択、お使いのOSの通りにインストールしてください。
-Arch Linuxをお使いの方はAURに[dotnet-sdk-2.0](https://aur.archlinux.org/packages/dotnet-sdk-2.0/)があるので、yaourtかなんかで入れて下さい。~~Community入りして欲しいなぁ(願望)~~
+https://github.com/dotnet/core/blob/master/release-notes/download-archive.md  
+ここから最新のバージョンを選択、お使いのOSの通りにインストールしてください。  
+Arch Linuxをお使いの方はAURに[dotnet-sdk-2.0](https://aur.archlinux.org/packages/dotnet-sdk-2.0/)があるので、yaourtかなんかで入れて下さい。  
+~~Community入りして欲しいなぁ(願望)~~
 
 ### 一応Hello Worldしてみる
 ```bash
@@ -63,10 +64,11 @@ mkdir whiteboard_signalr
 cd whiteboard_signalr
 dotnet new web
 ```
-`dotnet new`でテンプレートを用いてプロジェクトを作ってくれます。
+`dotnet new`でテンプレートを用いてプロジェクトを作ってくれます。  
 今回はSingalRだけ使うので空のASP .NET Coreテンプレートを示す`web`で十分です。
 ### SignalRライブラリを入れる
-.NETではライブラリ管理に[nuget](https://www.nuget.org/)を用います。.NET CoreではCLIで管理できるようになっています。
+.NETではライブラリ管理に[nuget](https://www.nuget.org/)を用います。  
+.NET CoreではCLIで管理できるようになっています。  
 というわけでサクッと双方向通信ライブラリ、SignalRを追加しましょう
 ```
 dotnet add package Microsoft.AspNetCore.SignalR --version 1.0.0-alpha2-final
@@ -102,6 +104,7 @@ wwwrootフォルダに移動して、そこで好きなエディタを使って�
 
 </html>
 ```
+ホワイトボードを実装してみます
 ```javascript:sketch.js
 function setup(){
     createCanvas(640, 480); //Canvas作る
@@ -130,12 +133,13 @@ function drawLineonSelf(){
     }
 }
 ```
-これでお絵かきするキャンバスが出来ました。マウスドラッグするとお絵かき出来ます
+これでお絵かきするキャンバスが出来ました。  
+マウスドラッグするとお絵かき出来ます
 ![キャンバス完成](client_1.png)
 ## 実際に作ってみる(サーバーサイド)
 
 ### Hubを定義する
-HubはSignalRにおいて、APIのエンドポイントであり、何か処理をして通知を送るサーバーとなる物です
+HubはSignalRにおいて、APIのエンドポイントであり、何か処理をしてクライアントのメソッドを呼び出すサーバーとなる物です  
 （良い説明が思い浮かばない……。Microsoftのドキュメントには
 「Provides methods that communicate with SignalR connections that connected to a Hub」とあります）
 
@@ -199,7 +203,7 @@ namespace whiteboard_signalr
 ```
 ## 実際に作ってみる(クライアントサイド・双方向通信編)
 ### SignalRのJSクライアントライブラリを入手する
-npmで配信されているSignalRのクライアントライブラリを入手します
+npmで配信されているSignalRのクライアントライブラリを入手します  
 適当なフォルダにて
 ```bash
 npm install @aspnet/signalr-client
@@ -251,9 +255,11 @@ function drawLineonSelf() {
 
 
 ## 終わりに
-SignalRを使う事で、簡単に双方向通信を書く事が出来ました。
-もちろんASP .NET Coreは双方向通信ライブラリだけではなく、MVC用のルーティングやビューを作ってくれるライブラリ、認証ライブラリ等様々なライブラリがMicrosoftによって作られています。
-ASP .NET Coreのリリースにより以前よりぐっとサーバーサイドC#の可能性が広がりました。この記事をきっかけに、サーバーサイドC#の世界に興味がある方が1人でもいれば幸いです。
+SignalRを使う事で、簡単に双方向通信を書く事が出来ました。  
+もちろんASP .NET Coreは双方向通信ライブラリだけではなく、MVC用のルーティングやビューを作ってくれるライブラリ、認証ライブラリ等様々なライブラリがMicrosoftによって作られています。  
+
+ASP .NET Coreのリリースにより以前よりぐっとサーバーサイドC#の可能性が広がりました。  
+この記事をきっかけに、サーバーサイドC#の世界に興味がある方が1人でもいれば幸いです。  
 **みんなC#をやろう（提案）**
 
 ## おまけ
@@ -262,4 +268,4 @@ ASP .NET Coreのリリースにより以前よりぐっとサーバーサイドC
 - 接続時にデータを渡す
 - 消去ボタンを追加する
 
-等の機能を加えたちょっと改良版を[GitHub](https://github.com/ShiranuiNui/Whiteboard_SignalR_p5)、およびshiranuisayaka.netに公開しています。よろしければそちらで遊んでみて下さい
+等の機能を加えたちょっと改良版を[GitHub](https://github.com/ShiranuiNui/Whiteboard_SignalR_p5)、およびshiranuisayaka.netに公開しています。よろしければそちらでも遊んでみて下さい
