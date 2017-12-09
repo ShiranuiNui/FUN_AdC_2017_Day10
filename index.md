@@ -270,4 +270,6 @@ ASP .NET Coreのリリースにより以前よりぐっとサーバーサイドC
 - 接続時にデータを渡す
 - 消去ボタンを追加する
 
-の機能を加えたちょっと改良版を[GitHub](https://github.com/ShiranuiNui/Whiteboard_SignalR_p5)、および[shiranuisayaka.net](http://shiranuisayaka.net/whiteboard/)に公開しています。よろしければそちらでも遊んでみて下さい
+の機能を加えたちょっと改良版を[GitHub](https://github.com/ShiranuiNui/Whiteboard_SignalR_p5)、および[shiranuisayaka.net](http://shiranuisayaka.net/whiteboard/)に公開しています。よろしければそちらでも遊んでみて下さい  
+
+明日はichiren1さんです
