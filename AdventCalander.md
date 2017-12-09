@@ -134,7 +134,7 @@ function drawLineonSelf(){
 }
 ```
 これでお絵かきするキャンバスが出来ました。  
-マウスドラッグするとお絵かき出来ます
+ファイルを開いてマウスドラッグするとお絵かき出来ます
 ![キャンバス完成](client_1.png)
 ## 実際に作ってみる(サーバーサイド)
 
@@ -249,13 +249,15 @@ function drawLineonSelf() {
 }
 ```
 ## 動かしてみる
-これで完成です。実際にブラウザを２つ立ち上げて、キャンバスの中でマウスドラッグしてお絵描きしてみると、ほぼ同時にもう片方に反映されると思います。
+これで完成です。実際にブラウザを２つ立ち上げて、`localhost:5000`にアクセスし、キャンバスの中でマウスドラッグしてお絵描きしてみると、ほぼ同時にもう片方に反映されると思います。
 
 ![大体完成](client_2.png)
 
 
 ## 終わりに
 SignalRを使う事で、簡単に双方向通信を書く事が出来ました。  
+今回の記事で書いたソースコードは[こちら](https://github.com/ShiranuiNui/FUN_AdC_2017_Day10/tree/master/Samples)にあります。  
+
 もちろんASP .NET Coreは双方向通信ライブラリだけではなく、MVC用のルーティングやビューを作ってくれるライブラリ、認証ライブラリ等様々なライブラリがMicrosoftによって作られています。  
 
 ASP .NET Coreのリリースにより以前よりぐっとサーバーサイドC#の可能性が広がりました。  
@@ -268,4 +270,4 @@ ASP .NET Coreのリリースにより以前よりぐっとサーバーサイドC
 - 接続時にデータを渡す
 - 消去ボタンを追加する
 
-等の機能を加えたちょっと改良版を[GitHub](https://github.com/ShiranuiNui/Whiteboard_SignalR_p5)、およびshiranuisayaka.netに公開しています。よろしければそちらでも遊んでみて下さい
+の機能を加えたちょっと改良版を[GitHub](https://github.com/ShiranuiNui/Whiteboard_SignalR_p5)、および[shiranuisayaka.net](http://shiranuisayaka.net/whiteboard/)に公開しています。よろしければそちらでも遊んでみて下さい
